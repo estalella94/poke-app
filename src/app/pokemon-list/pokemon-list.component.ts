@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -11,7 +12,8 @@ export class PokemonListComponent implements OnInit {
   pokemons : any [] = [];
 
   constructor(
-    private dataService: DataService
+    private dataService: DataService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -23,14 +25,18 @@ export class PokemonListComponent implements OnInit {
         .subscribe((pokedata:any)=> {
 
           this.pokemons.push(pokedata);
-          
+
         });
       });
     });
-           
+
     console.log("pokemons encontrados ", this.pokemons);
   }
 
-  
+  pokemonDetail(){
+    this.router.navigateByUrl('/pokemon-detail')
+  }
+
+
 
 }

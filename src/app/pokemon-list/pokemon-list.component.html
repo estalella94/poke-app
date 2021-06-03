@@ -1,9 +1,9 @@
 
 
-<div *ngIf = "pokemons" class="pokemon-grid">
+<div (click)='pokemonDetail()' *ngIf = "pokemons" class="pokemon-grid">
 
     <div  class="box" *ngFor= "let pokemon of pokemons" >
-        
+
         <img [src]="pokemon.sprites.front_default" alt="Pokemon">
 
         <h3>{{ pokemon.name }}</h3>
@@ -23,7 +23,7 @@
         <p>
              Attack Power:  {{ pokemon.stats[1]?.base_stat }}
         </p>
-        
+
     </div>
 
 </div>

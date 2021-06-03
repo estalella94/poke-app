@@ -12,6 +12,7 @@ import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.componen
 import { FilterComponent } from './filter/filter.component';
 
 import {MatMenuModule} from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon';
 
 
 
@@ -30,7 +31,8 @@ import {MatMenuModule} from '@angular/material/menu';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatMenuModule
+    MatMenuModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
