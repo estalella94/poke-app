@@ -17,11 +17,15 @@ export class PokemonListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+   
+
+
+    
     this.dataService.getPokemons()
     .subscribe((pokelist: any)=> {
 
       pokelist.results.forEach((result:any) => {
-        this.dataService.getMoreData(result.url)
+        this.dataService.getMoreData(result.name)
         .subscribe((pokedata:any)=> {
 
           this.pokemons.push(pokedata);
@@ -31,12 +35,46 @@ export class PokemonListComponent implements OnInit {
     });
 
     console.log("pokemons encontrados ", this.pokemons);
+  
+
+
+
+
+
   }
 
-  pokemonDetail(){
+  pokemonDetail() {
     this.router.navigateByUrl('/pokemon-detail')
   }
+  
+/*
+  getPokemons(){
+    let pokemon;
 
-
-
+  for (let i = 1; i <= 150; i++){
+    this.dataService.getPokemons(i).subscribe(
+      res=> {
+        
+      },
+      err =>{
+        console.log(err);
+      }
+    );
+  }
+*/
+  
 }
+
+
+
+    
+
+    
+  
+  
+    
+  
+
+ 
+
+
