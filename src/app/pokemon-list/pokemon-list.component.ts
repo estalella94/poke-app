@@ -16,24 +16,17 @@ export class PokemonListComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit(): void {
+ async ngOnInit(){
    
 
 
-    
-    this.dataService.getPokemons()
+    this.pokemons = <any>await this.dataService.getPokemons()
+    console.log('pokemons en componente', this.pokemons);
+/*
     .subscribe((pokelist: any)=> {
-
-      pokelist.results.forEach((result:any) => {
-        this.dataService.getMoreData(result.name)
-        .subscribe((pokedata:any)=> {
-
-          this.pokemons.push(pokedata);
-
-        });
-      });
+      this.pokemons = pokelist; 
     });
-
+*/
     console.log("pokemons encontrados ", this.pokemons);
   
 
