@@ -22,12 +22,8 @@ export class PokemonListComponent implements OnInit {
 
     this.pokemons = <any>await this.dataService.getPokemons()
     console.log('pokemons en componente', this.pokemons);
-/*
-    .subscribe((pokelist: any)=> {
-      this.pokemons = pokelist; 
-    });
-*/
-    console.log("pokemons encontrados ", this.pokemons);
+
+    
   
 
 

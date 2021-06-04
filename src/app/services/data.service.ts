@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
+import { Observable } from 'rxjs';
+
 
 
 
@@ -67,17 +69,29 @@ export class DataService {
       for (let i = 1; i <= 150; i++) {
         pokemonObtenido = await this.http.get(`https://pokeapi.co/api/v2/pokemon/${i}`).toPromise();
         this.pokemons.push(pokemonObtenido)
-
+        
       }
       console.log('pokemons antes del resolve',this.pokemons);
       resolve(this.pokemons)
+     
     })
 
   }
+  /*
+ getDataById(){
+   this.pokemons
+   
+   
+ }
+*/
+      
+
+
+     
+   
   
-  getPokemonWithID(){
-    this.pokemons
-  }
+
+  
 
 
 
