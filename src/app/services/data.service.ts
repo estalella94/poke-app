@@ -79,7 +79,13 @@ export class DataService {
 
   }
   
- 
+ getPokemon(id:number){
+// este metodo recibe una id y devuelve el pokemon con ese ID
+return this.pokemons.find(pokemon => pokemon.id === id);
+
+
+
+ }
    
    
  }
