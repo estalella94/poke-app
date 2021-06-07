@@ -33,7 +33,7 @@ export class PokemonListComponent implements OnInit {
   }
 
   pokemonDetail() {
-    this.router.navigateByUrl('/pokemon-detail')
+    this.router.navigateByUrl('/pokemon-detail/:id')
   }
   
 /*

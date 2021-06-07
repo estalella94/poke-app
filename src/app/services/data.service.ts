@@ -63,10 +63,11 @@ export class DataService {
 
 
   async getPokemons() {
-    //conseguir paquete de 20 pokemons
+    //conseguir paquete de 150 pokemons
     let pokemonObtenido
+
     return new Promise(async (resolve, reject) => {
-      for (let i = 1; i <= 150; i++) {
+      for (let i = 1; i <= 151; i++) {
         pokemonObtenido = await this.http.get(`https://pokeapi.co/api/v2/pokemon/${i}`).toPromise();
         this.pokemons.push(pokemonObtenido)
         
@@ -77,13 +78,12 @@ export class DataService {
     })
 
   }
-  /*
- getDataById(){
-   this.pokemons
+  
+ 
    
    
  }
-*/
+
       
 
 
@@ -95,4 +95,3 @@ export class DataService {
 
 
 
-}

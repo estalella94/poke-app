@@ -1,6 +1,7 @@
-import { identifierModuleUrl } from '@angular/compiler';
+
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
+import {Router, ActivatedRoute} from '@angular/router'
 
 @Component({
   selector: 'app-pokemon-detail',
@@ -13,9 +14,15 @@ export class PokemonDetailComponent implements OnInit {
 
   constructor(
     private dataService: DataService,
-  ) { }
+    private activatedRouter:ActivatedRoute,
+    private router:Router) { 
+
+    }
 
   ngOnInit(): void {
     
+   
   }
+
+  
 }
